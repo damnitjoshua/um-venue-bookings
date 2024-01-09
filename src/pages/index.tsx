@@ -14,7 +14,7 @@ export default function Home() {
 					<p>A centralized hub for Universiti Malaya students to book venues</p>
 				</div>
 			</section>
-			<section className="py-10">
+			<section className="py-10 px-4 space-y-4">
 				<div className="text-center space-y-1">
 					<h2 className="text-blue-900 text-2xl font-bold">Search</h2>
 					<p className="text-gray-500">Filter your search or view all options</p>

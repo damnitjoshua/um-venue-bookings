@@ -10,3 +10,11 @@ type Bookings = {
 	venueID: string;
 	isApproved: boolean;
 };
+
+type Venues = {
+	id: string;
+	image: string;
+	name: string;
+	category: string;
+	link?: string;
+};

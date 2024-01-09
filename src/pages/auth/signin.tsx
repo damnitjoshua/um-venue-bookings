@@ -9,6 +9,8 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 import { useRouter } from "next/router";
 import firebase_app from "@/lib/firebase";
 import { toast } from "sonner";
+import { ReloadIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 const formSchema = z.object({
 	email: z.string().email(),
@@ -17,7 +19,7 @@ const formSchema = z.object({
 
 const auth = getAuth(firebase_app);
 
-export default function SignIN() {
+export default function SignIn() {
 	const router = useRouter();
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -69,7 +71,15 @@ export default function SignIN() {
 							</FormItem>
 						)}
 					/>
-					<Button type="submit">Submit</Button>
+					<div className="space-x-2">
+						<Button type="submit" disabled={form.formState.isLoading}>
+							{form.formState.isLoading && <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />}
+							Submit
+						</Button>
+						<Button variant="outline" asChild>
+							<Link href="/auth/signup">Go To Sign Up</Link>
+						</Button>
+					</div>
 				</form>
 			</Form>
 		</div>

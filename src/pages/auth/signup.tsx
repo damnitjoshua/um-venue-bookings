@@ -12,11 +12,23 @@ import { useRouter } from "next/router";
 import firebase_app from "@/lib/firebase";
 import { useAuthContext } from "@/context/AuthContext";
 import { toast } from "sonner";
+import { ReloadIcon } from "@radix-ui/react-icons";
 
 const formSchema = z
 	.object({
 		name: z.string().min(2).max(50),
-		email: z.string().email(),
+		email: z
+			.string()
+			.email()
+			.refine(
+				(value) => {
+					const regex = /@siswa\.um\.edu\.my$/;
+					return regex.test(value);
+				},
+				{
+					message: "Email must end with @siswa.um.edu.my",
+				}
+			),
 		password: z.string().min(2),
 		confirmPassword: z.string().min(2),
 	})
@@ -128,7 +140,10 @@ export default function SignUp() {
 							</FormItem>
 						)}
 					/>
-					<Button type="submit">Submit</Button>
+					<Button type="submit" disabled={form.formState.isLoading}>
+						{form.formState.isLoading && <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />}
+						Submit
+					</Button>
 				</form>
 			</Form>
 		</div>
