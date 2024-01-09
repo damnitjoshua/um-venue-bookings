@@ -61,6 +61,7 @@ export default function SubmitBooking(props: { venueId: string }) {
 				endTime: values.endTime,
 				usage: values.usage,
 				venueID: venueId,
+				status: "pending",
 			});
 
 			router.push(`/venue/booked`);

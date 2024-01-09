@@ -8,7 +8,7 @@ type Bookings = {
 	uid: string;
 	usage: string;
 	venueID: string;
-	isApproved: boolean;
+	status: string;
 };
 
 type Venues = {
