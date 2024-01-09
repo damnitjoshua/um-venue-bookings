@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import { signIn } from "next-auth/react";
 import { useAuthContext } from "@/context/AuthContext";
 import { getAuth, signOut } from "firebase/auth";
 import { toast } from "sonner";

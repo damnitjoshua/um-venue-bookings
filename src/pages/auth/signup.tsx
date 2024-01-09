@@ -7,7 +7,6 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from "@/components/ui/input";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, collection, addDoc, setDoc, doc } from "firebase/firestore";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import firebase_app from "@/lib/firebase";
 import { useAuthContext } from "@/context/AuthContext";
