@@ -42,7 +42,7 @@ export default function SignIn() {
 	}
 	return (
 		<div className="px-4 py-5 space-y-5">
-			<h1 className="text-3xl font-medium">Sign Up</h1>
+			<h1 className="text-3xl font-medium">Sign In</h1>
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
 					<FormField
