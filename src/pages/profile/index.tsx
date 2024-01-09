@@ -3,7 +3,7 @@ import React from "react";
 import AdminDash from "./AdminDash";
 import StudentDash from "./StudentDash";
 
-export default function index() {
+export default function Index() {
 	const { user } = useAuthContext();
 
 	if (!user) {

@@ -45,7 +45,7 @@ const details = [
 	},
 ];
 
-export default function index() {
+export default function Index() {
 	const router = useRouter();
 	const venueId: string = router.query.slug as string;
 	const { venues } = useVenueContext();
