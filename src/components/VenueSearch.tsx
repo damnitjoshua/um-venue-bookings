@@ -91,7 +91,7 @@ export default function VenueSearch() {
 					</form>
 				</Form>
 			</section>
-			<section className="grid grid-cols-4 gap-4">
+			<section className="grid grid-cols-2 md:grid-cols-4 gap-4">
 				{searchResults && searchResults?.length != 0 ? (
 					searchResults.map((value: Venues, index: number) => (
 						<Link key={index} href={value.link!}>

@@ -45,7 +45,7 @@ export default function SubmitBooking(props: { venueId: string }) {
 			}
 
 			if (hours > 2) {
-				return toast("Must be less than 2 hours");
+				return toast("Booking time exceed the time allocated");
 			}
 
 			if (!user) {

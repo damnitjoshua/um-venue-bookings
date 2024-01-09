@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import SubmitBooking from "../../components/SubmitBooking";
+import { Separator } from "@/components/ui/separator";
 
 const details = [
 	{
@@ -74,7 +75,7 @@ export default function Index() {
   return (
 		<div>
 			{/* venue detials  */}
-			<section className="flex flex-row items-center gap-4 px-4 py-10">
+			<section className="flex flex-col md:flex-row items-center gap-4 px-4 py-10">
 				<div className="h-[15em] aspect-video border relative">
 					<Image src={venueExists.image} alt="image" width={1000} height={1000} className="absolute object-cover h-full" />
 				</div>
@@ -92,7 +93,7 @@ export default function Index() {
 					</div>
 				</div>
 			</section>
-			{/* <Separator /> */}
+			<Separator />
 			<section className="px-4 py-20">
 				<h2 className="text-xl font-medium text-blue-900">Booking</h2>
 				<p className="text-sm">Only for FSKTM Students, Limit to maximum 2 hours per booking for each group of students</p>
